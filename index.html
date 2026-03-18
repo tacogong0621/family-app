@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lee Family HQ">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkxlZSBGYW1pbHkgSFEiLAogICJzaG9ydF9uYW1lIjogIkxlZSBIUSIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIiwKICAidGhlbWVfY29sb3IiOiAiIzAwMDAwMCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJZ2RtbGxkMEp2ZUQwaU1DQXdJRFV4TWlBMU1USWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStDaUFnUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlHWnBiR3c5SWlNNE4wTkZSVUlpTHo0S0lDQThaV3hzYVhCelpTQmplRDBpTVRBd0lpQmplVDBpTnpBaUlISjRQU0kwTlNJZ2NuazlJakl6SWlCbWFXeHNQU0ozYUdsMFpTSWdiM0JoWTJsMGVUMGlNQzQ0TlNJdlBnb2dJRHhsYkd4cGNITmxJR040UFNJeE5EQWlJR041UFNJMk1DSWdjbmc5SWpNMklpQnllVDBpTWpBaUlHWnBiR3c5SW5kb2FYUmxJaUJ2Y0dGamFYUjVQU0l3TGpnMUlpOCtDaUFnUEdWc2JHbHdjMlVnWTNnOUlqTTVNQ0lnWTNrOUlqZ3lJaUJ5ZUQwaU16Z2lJSEo1UFNJeE9DSWdabWxzYkQwaWQyaHBkR1VpSUc5d1lXTnBkSGs5SWpBdU9DSXZQZ29nSUR4bGJHeHBjSE5sSUdONFBTSTBNalVpSUdONVBTSTNOQ0lnY25nOUlqSTRJaUJ5ZVQwaU1UVWlJR1pwYkd3OUluZG9hWFJsSWlCdmNHRmphWFI1UFNJd0xqZ2lMejRLSUNBOGNtVmpkQ0I0UFNJeE1UZ2lJSGs5SWpFd01DSWdkMmxrZEdnOUlqSTFJaUJvWldsbmFIUTlJamMwSWlCbWFXeHNQU0lqT1dFNE9EYzRJaTgrQ2lBZ1BISmxZM1FnZUQwaU1URXlJaUI1UFNJNU55SWdkMmxrZEdnOUlqTTNJaUJvWldsbmFIUTlJamdpSUhKNFBTSXhJaUJtYVd4c1BTSWpPR0UzT0RZNElpOCtDaUFnUEhCdmJIbG5iMjRnY0c5cGJuUnpQU0kwTmlJZ1ptbHNiRDBpSXpaaE5tRTNZU0l2UGdvZ0lEeHdiMng1WjI5dUlIQnZhVzUwY3owaU5EWXNNakk0SURJMU5pd3hNRFlnTkRZMkxESXlPQ0lnWm1sc2JEMGlJelpoTm1FM1lTSXZQZ29nSUR4c2FXNWxJSGd4UFNJME5pSWdlVEU5SWpJeU9DSWdlREk5SWpRMk5pSWdlVEk5SWpJeU9DSWdjM1J5YjJ0bFBTSWpOVFUxTlRZMklpQnpkSEp2YTJVdGQybGtkR2c5SWpRaUx6NEtJQ0E4Y21WamRDQjRQU0kyTmlJZ2VUMGlNakl3SWlCM2FXUjBhRDBpTXpnd0lpQm9aV2xuYUhROUlqSTBNaUlnWm1sc2JEMGlJMlE0WkRSak9DSXZQZ29nSUR4eVpXTjBJSGc5SWpZMklpQjVQU0l6TWpBaUlIZHBaSFJvUFNJek9EQWlJR2hsYVdkb2REMGlOaUlnWm1sc2JEMGlJMk00WXpSaU9DSXZQZ29nSUR4eVpXTjBJSGc5SWpnNElpQjVQU0l5TXpnaUlIZHBaSFJvUFNJMk5pSWdhR1ZwWjJoMFBTSTNPQ0lnY25nOUlqSWlJR1pwYkd3OUluZG9hWFJsSWk4K0NpQWdQSEpsWTNRZ2VEMGlNVGd5SWlCNVBTSXlNemdpSUhkcFpIUm9QU0kyTmlJZ2FHVnBaMmgwUFNJM09DSWdjbmc5SWpJaUlHWnBiR3c5SW5kb2FYUmxJaTgrQ2lBZ1BISmxZM1FnZUQwaU1qWTBJaUI1UFNJeU16Z2lJSGRwWkhSb1BTSTJOaUlnYUdWcFoyaDBQU0kzT0NJZ2NuZzlJaklpSUdacGJHdzlJbmRvYVhSbElpOCtDaUFnUEhKbFkzUWdlRDBpTXpVNElpQjVQU0l5TXpnaUlIZHBaSFJvUFNJMk5pSWdhR1ZwWjJoMFBTSTNPQ0lnY25nOUlqSWlJR1pwYkd3OUluZG9hWFJsSWk4K0NpQWdQSEpsWTNRZ2VEMGlPREFpSUhrOUlqTXpOaUlnZDJsa2RHZzlJamcwSWlCb1pXbG5hSFE5SWprMElpQnllRDBpTWlJZ1ptbHNiRDBpZDJocGRHVWlMejRLSUNBOGNtVmpkQ0I0UFNJek5EZ2lJSGs5SWpNek5pSWdkMmxrZEdnOUlqZzBJaUJvWldsbmFIUTlJamswSWlCeWVEMGlNaUlnWm1sc2JEMGlkMmhwZEdVaUx6NEtJQ0E4Y21WamRDQjRQU0l5TURnaUlIazlJak16TUNJZ2QybGtkR2c5SWprMklpQm9aV2xuYUhROUlqRXpNaUlnY25nOUlqTWlJR1pwYkd3OUlpTmpZekZoTURBaUx6NEtJQ0E4Y21WamRDQjRQU0l5TURnaUlIazlJak16TUNJZ2QybGtkR2c5SWprMklpQm9aV2xuYUhROUlqVWlJSEo0UFNJeUlpQm1hV3hzUFNJak9Ua3hNakF3SWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTWpreUlpQmplVDBpTkRBd0lpQnlQU0kySWlCbWFXeHNQU0lqWkRSaE1ERTNJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNamt5SWlCamVUMGlOREF3SWlCeVBTSXlMalVpSUdacGJHdzlJaU5tTUdNd05EQWlMejRLSUNBOGNtVmpkQ0I0UFNJeE9UUWlJSGs5SWpRMU5pSWdkMmxrZEdnOUlqRXlOQ0lnYUdWcFoyaDBQU0l4TUNJZ2NuZzlJakVpSUdacGJHdzlJaU5pWW1JaUx6NEtJQ0E4Y21WamRDQjRQU0l4T0RZaUlIazlJalEyTWlJZ2QybGtkR2c5SWpFME1DSWdhR1ZwWjJoMFBTSTRJaUJ5ZUQwaU1TSWdabWxzYkQwaUkyRmhZU0l2UGdvZ0lEeHlaV04wSUhnOUlqQWlJSGs5SWpRMU5pSWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTmlJZ1ptbHNiRDBpSXpSaE9HRXlPQ0l2UGdvZ0lEeGxiR3hwY0hObElHTjRQU0l4TVRBaUlHTjVQU0kwTmpBaUlISjRQU0l6TmlJZ2NuazlJakl3SWlCbWFXeHNQU0lqTXpVM05USXdJaTgrQ2lBZ1BHVnNiR2x3YzJVZ1kzZzlJalF3TWlJZ1kzazlJalEyTUNJZ2NuZzlJak0ySWlCeWVUMGlNakFpSUdacGJHdzlJaU16TlRjMU1qQWlMejRLSUNBOFpXeHNhWEJ6WlNCamVEMGlNVGt3SWlCamVUMGlORFkySWlCeWVEMGlNakFpSUhKNVBTSXhOU0lnWm1sc2JEMGlJek5rT0RVeU5TSXZQZ29nSUR4bGJHeHBjSE5sSUdONFBTSXpNaklpSUdONVBTSTBOallpSUhKNFBTSXlNQ0lnY25rOUlqRTFJaUJtYVd4c1BTSWpNMlE0TlRJMUlpOCtDaUFnUEhSbGVIUWdlRDBpTWpVMklpQjVQU0kxTURRaUlHWnZiblF0Wm1GdGFXeDVQU0pIWlc5eVoybGhMSE5sY21sbUlpQm1iMjUwTFhOcGVtVTlJakU1SWlCbWIyNTBMWGRsYVdkb2REMGlOekF3SWlCbWFXeHNQU0ozYUdsMFpTSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0lnYkdWMGRHVnlMWE53WVdOcGJtYzlJallpSUc5d1lXTnBkSGs5SWpBdU9TSStURVZGUEM5MFpYaDBQZ284TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9CiAgXQp9">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzODAiIGZpbGw9IiM4N0NFRUIiLz4KICA8ZWxsaXBzZSBjeD0iODAiIGN5PSI1NSIgcng9IjM1IiByeT0iMTgiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPGVsbGlwc2UgY3g9IjEwOCIgY3k9IjQ4IiByeD0iMjgiIHJ5PSIxNiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuODUiLz4KICA8ZWxsaXBzZSBjeD0iMzEwIiBjeT0iNjUiIHJ4PSIzMCIgcnk9IjE0IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPGVsbGlwc2UgY3g9IjMzNiIgY3k9IjU4IiByeD0iMjIiIHJ5PSIxMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOCIvPgogIDxyZWN0IHg9Ijk2IiB5PSI3OCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjU4IiBmaWxsPSIjOWE4ODc4Ii8+CiAgPHJlY3QgeD0iOTIiIHk9Ijc2IiB3aWR0aD0iMjgiIGhlaWdodD0iNiIgcng9IjEiIGZpbGw9IiM4YTc4NjgiLz4KICA8cG9seWdvbiBwb2ludHM9IjM2LDE3OCAyMDAsODIgMzY0LDE3OCIgZmlsbD0iIzZhNmE3YSIvPgogIDxsaW5lIHgxPSIzNiIgeTE9IjE3OCIgeDI9IjM2NCIgeTI9IjE3OCIgc3Ryb2tlPSIjNTU1NTY2IiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cmVjdCB4PSI1MiIgeT0iMTcyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjE4OCIgZmlsbD0iI2Q4ZDRjOCIvPgogIDxyZWN0IHg9IjUyIiB5PSIyNTgiIHdpZHRoPSIyOTYiIGhlaWdodD0iNSIgZmlsbD0iI2M4YzRiOCIvPgogIDxyZWN0IHg9IjY4IiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMTQyIiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMjA2IiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMjgwIiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iNjIiIHk9IjI3MCIgd2lkdGg9IjY2IiBoZWlnaHQ9Ijc0IiByeD0iMiIgZmlsbD0id2hpdGUiLz4KICA8cmVjdCB4PSIyNzIiIHk9IjI3MCIgd2lkdGg9IjY2IiBoZWlnaHQ9Ijc0IiByeD0iMiIgZmlsbD0id2hpdGUiLz4KICA8cmVjdCB4PSIxNjIiIHk9IjI1OCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjEwNCIgcng9IjMiIGZpbGw9IiNjYzFhMDAiLz4KICA8cmVjdCB4PSIxNjIiIHk9IjI1OCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjOTkxMjAwIi8+CiAgPGNpcmNsZSBjeD0iMjMwIiBjeT0iMzE1IiByPSI0LjUiIGZpbGw9IiNkNGEwMTciLz4KICA8Y2lyY2xlIGN4PSIyMzAiIGN5PSIzMTUiIHI9IjIiIGZpbGw9IiNmMGMwNDAiLz4KICA8cmVjdCB4PSIxNTIiIHk9IjM1OCIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjgiIHJ4PSIxIiBmaWxsPSIjYmJiIi8+CiAgPHJlY3QgeD0iMTQ1IiB5PSIzNjIiIHdpZHRoPSIxMTAiIGhlaWdodD0iNiIgcng9IjEiIGZpbGw9IiNhYWEiLz4KICA8cmVjdCB4PSIwIiB5PSIzNTUiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDUiIGZpbGw9IiM0YThhMjgiLz4KICA8ZWxsaXBzZSBjeD0iODUiIGN5PSIzNTgiIHJ4PSIyOCIgcnk9IjE2IiBmaWxsPSIjMzU3NTIwIi8+CiAgPGVsbGlwc2UgY3g9IjMxNSIgY3k9IjM1OCIgcng9IjI4IiByeT0iMTYiIGZpbGw9IiMzNTc1MjAiLz4KICA8ZWxsaXBzZSBjeD0iMTQ4IiBjeT0iMzYyIiByeD0iMTYiIHJ5PSIxMiIgZmlsbD0iIzNkODUyNSIvPgogIDxlbGxpcHNlIGN4PSIyNTIiIGN5PSIzNjIiIHJ4PSIxNiIgcnk9IjEyIiBmaWxsPSIjM2Q4NTI1Ii8+CiAgPHRleHQgeD0iMjAwIiB5PSIzOTIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjUiIG9wYWNpdHk9IjAuOSI+TEVFPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzODAiIGZpbGw9IiM4N0NFRUIiLz4KICA8ZWxsaXBzZSBjeD0iODAiIGN5PSI1NSIgcng9IjM1IiByeT0iMTgiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPGVsbGlwc2UgY3g9IjEwOCIgY3k9IjQ4IiByeD0iMjgiIHJ5PSIxNiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuODUiLz4KICA8ZWxsaXBzZSBjeD0iMzEwIiBjeT0iNjUiIHJ4PSIzMCIgcnk9IjE0IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPGVsbGlwc2UgY3g9IjMzNiIgY3k9IjU4IiByeD0iMjIiIHJ5PSIxMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOCIvPgogIDxyZWN0IHg9Ijk2IiB5PSI3OCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjU4IiBmaWxsPSIjOWE4ODc4Ii8+CiAgPHJlY3QgeD0iOTIiIHk9Ijc2IiB3aWR0aD0iMjgiIGhlaWdodD0iNiIgcng9IjEiIGZpbGw9IiM4YTc4NjgiLz4KICA8cG9seWdvbiBwb2ludHM9IjM2LDE3OCAyMDAsODIgMzY0LDE3OCIgZmlsbD0iIzZhNmE3YSIvPgogIDxsaW5lIHgxPSIzNiIgeTE9IjE3OCIgeDI9IjM2NCIgeTI9IjE3OCIgc3Ryb2tlPSIjNTU1NTY2IiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cmVjdCB4PSI1MiIgeT0iMTcyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjE4OCIgZmlsbD0iI2Q4ZDRjOCIvPgogIDxyZWN0IHg9IjUyIiB5PSIyNTgiIHdpZHRoPSIyOTYiIGhlaWdodD0iNSIgZmlsbD0iI2M4YzRiOCIvPgogIDxyZWN0IHg9IjY4IiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMTQyIiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMjA2IiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iMjgwIiB5PSIxODUiIHdpZHRoPSI1MiIgaGVpZ2h0PSI2MiIgcng9IjIiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iNjIiIHk9IjI3MCIgd2lkdGg9IjY2IiBoZWlnaHQ9Ijc0IiByeD0iMiIgZmlsbD0id2hpdGUiLz4KICA8cmVjdCB4PSIyNzIiIHk9IjI3MCIgd2lkdGg9IjY2IiBoZWlnaHQ9Ijc0IiByeD0iMiIgZmlsbD0id2hpdGUiLz4KICA8cmVjdCB4PSIxNjIiIHk9IjI1OCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjEwNCIgcng9IjMiIGZpbGw9IiNjYzFhMDAiLz4KICA8cmVjdCB4PSIxNjIiIHk9IjI1OCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjOTkxMjAwIi8+CiAgPGNpcmNsZSBjeD0iMjMwIiBjeT0iMzE1IiByPSI0LjUiIGZpbGw9IiNkNGEwMTciLz4KICA8Y2lyY2xlIGN4PSIyMzAiIGN5PSIzMTUiIHI9IjIiIGZpbGw9IiNmMGMwNDAiLz4KICA8cmVjdCB4PSIxNTIiIHk9IjM1OCIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjgiIHJ4PSIxIiBmaWxsPSIjYmJiIi8+CiAgPHJlY3QgeD0iMTQ1IiB5PSIzNjIiIHdpZHRoPSIxMTAiIGhlaWdodD0iNiIgcng9IjEiIGZpbGw9IiNhYWEiLz4KICA8cmVjdCB4PSIwIiB5PSIzNTUiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDUiIGZpbGw9IiM0YThhMjgiLz4KICA8ZWxsaXBzZSBjeD0iODUiIGN5PSIzNTgiIHJ4PSIyOCIgcnk9IjE2IiBmaWxsPSIjMzU3NTIwIi8+CiAgPGVsbGlwc2UgY3g9IjMxNSIgY3k9IjM1OCIgcng9IjI4IiByeT0iMTYiIGZpbGw9IiMzNTc1MjAiLz4KICA8ZWxsaXBzZSBjeD0iMTQ4IiBjeT0iMzYyIiByeD0iMTYiIHJ5PSIxMiIgZmlsbD0iIzNkODUyNSIvPgogIDxlbGxpcHNlIGN4PSIyNTIiIGN5PSIzNjIiIHJ4PSIxNiIgcnk9IjEyIiBmaWxsPSIjM2Q4NTI1Ii8+CiAgPHRleHQgeD0iMjAwIiB5PSIzOTIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjUiIG9wYWNpdHk9IjAuOSI+TEVFPC90ZXh0Pgo8L3N2Zz4=">
+<title>Lee Family HQ</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:#fff;overscroll-behavior:none}
+body{font-family:'Inter',sans-serif;color:#000;max-width:430px;margin:0 auto;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:0}
+.page{min-height:100vh;display:flex;flex-direction:column}
+
+/* HEADER */
+.hdr{padding:max(env(safe-area-inset-top),18px) 20px 14px;border-bottom:1px solid #000;flex-shrink:0}
+.hdr-row{display:flex;justify-content:space-between;align-items:baseline}
+.hdr-title{font-size:15px;font-weight:700}
+.hdr-date{font-size:12px;color:#999}
+.hdr-kids{font-size:11px;color:#bbb;margin-top:4px;letter-spacing:.3px;text-transform:uppercase}
+.hdr-meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.hdr-mode{font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border:1px solid #000}
+.hdr-refresh{font-size:11px;color:#bbb;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:underline;text-underline-offset:2px;padding:0}
+
+/* NAV */
+.nav{border-top:1px solid #000;display:flex;height:56px;flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
+.nav-btn{flex:1;border:none;background:none;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#bbb;cursor:pointer;letter-spacing:.3px;text-transform:uppercase}
+.nav-btn.act{color:#000;font-weight:700}
+
+/* SCROLLABLE BODY */
+.body{flex:1;overflow-y:auto}
+
+/* SECTION */
+.sec{border-bottom:1px solid #f0f0f0;padding:18px 20px}
+.sec:last-child{border-bottom:none}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:#bbb;margin-bottom:14px}
+
+/* DOTS */
+.dots{display:inline-flex;gap:4px;align-items:center}
+.dots span{width:4px;height:4px;border-radius:50%;background:#ccc;animation:dp 1.4s infinite}
+.dots span:nth-child(2){animation-delay:.2s}
+.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dp{0%,80%,100%{opacity:.3;transform:scale(.7)}40%{opacity:1;transform:scale(1)}}
+
+/* BRIEFING */
+.brief-summary{font-size:14px;font-weight:500;line-height:1.65;margin-bottom:16px}
+.alert-item{display:flex;gap:12px;padding:11px 0;border-top:1px solid #f5f5f5;align-items:flex-start}
+.alert-item:first-child{border-top:none;padding-top:0}
+.a-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.a-dot.red{background:#c00}.a-dot.amber{background:#c07000}.a-dot.green{background:#060}.a-dot.blue{background:#004ccc}
+.alert-title{font-size:13px;font-weight:600;margin-bottom:2px;line-height:1.4}
+.alert-detail{font-size:12px;color:#666;line-height:1.55}
+.actions-wrap{margin-top:14px;padding-top:14px;border-top:1px solid #f0f0f0}
+.actions-lbl{font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:#bbb;margin-bottom:10px}
+.action-row{display:flex;gap:10px;padding:5px 0}
+.action-n{font-size:11px;color:#ccc;font-weight:600;min-width:14px}
+.action-t{font-size:12px;color:#333;line-height:1.5}
+.no-issues{font-size:13px;color:#999;line-height:1.6}
+.retry-btn{background:none;border:none;font-family:'Inter',sans-serif;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;text-underline-offset:2px;padding:0;margin-top:12px;display:block}
+
+/* EVENTS */
+.evt{display:flex;gap:14px;padding:10px 0;border-top:1px solid #f5f5f5;align-items:flex-start;cursor:pointer}
+.evt:first-child{border-top:none;padding-top:0}
+.evt-time{font-size:11px;color:#aaa;min-width:52px;padding-top:2px;font-weight:500;flex-shrink:0}
+.evt-body{flex:1;min-width:0}
+.evt-title{font-size:13px;font-weight:500;line-height:1.4}
+.evt-sub{font-size:11px;color:#aaa;margin-top:2px}
+.evt-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.3px;padding:2px 6px;margin-top:4px;text-transform:uppercase}
+.evt-tag.dana{background:#FFD600;color:#000}
+.evt-tag.brandon{background:#00C853;color:#fff}
+.pickup-btn{font-size:10px;font-weight:600;letter-spacing:.3px;padding:3px 8px;border:1px solid #ddd;background:#fff;color:#ccc;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;margin-top:2px}
+.pickup-btn.on{border-color:#000;background:#000;color:#fff}
+.pickup-expand{display:flex;gap:6px;padding:6px 0 10px 66px;align-items:center}
+.pbtn{padding:5px 14px;border:1px solid #ddd;background:#fff;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#888;cursor:pointer}
+.pbtn.taken{border-color:#000;background:#000;color:#fff;font-weight:600}
+.pbtn-lbl{font-size:11px;color:#aaa}
+
+/* WEEKLY */
+.wk-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.wk-range{font-size:13px;font-weight:600}
+.wk-arrow{border:none;background:none;font-size:18px;color:#aaa;cursor:pointer;padding:0 4px;font-family:'Inter',sans-serif;line-height:1}
+.wk-grid{display:flex;border-left:1px solid #eee;margin-bottom:16px}
+.wk-col{flex:1;border-right:1px solid #eee}
+.wk-hdr{padding:6px 3px;border-bottom:1px solid #eee;text-align:center}
+.wk-dn{font-size:9px;color:#bbb;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.wk-num{font-size:11px;font-weight:600;margin-top:2px;text-align:center}
+.wk-today{width:20px;height:20px;border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;margin:2px auto 0;font-size:10px}
+.wk-body{padding:3px 2px;min-height:36px}
+.wk-chip{font-size:8px;font-weight:600;padding:2px 3px;margin-bottom:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.wk-chip.dana{background:#FFD600;color:#000}
+.wk-chip.brandon{background:#00C853;color:#fff}
+.wk-chip.other{background:#eee;color:#555}
+
+/* MONTHLY */
+.mo-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mo-title{font-size:14px;font-weight:700}
+.mo-arrow{border:none;background:none;font-size:18px;color:#aaa;cursor:pointer;padding:0 4px;font-family:'Inter',sans-serif;line-height:1}
+.mo-grid{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:16px}
+.mo-dayname{text-align:center;font-size:9px;font-weight:600;color:#bbb;text-transform:uppercase;padding:4px 0;border-bottom:1px solid #eee}
+.mo-cell{min-height:48px;padding:4px 2px;border-right:1px solid #f8f8f8;border-bottom:1px solid #f8f8f8;cursor:default}
+.mo-num{font-size:10px;font-weight:500;width:20px;height:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 2px}
+.mo-num.today{background:#000;color:#fff;border-radius:50%}
+.mo-dot{height:3px;margin-bottom:1px;border-radius:1px}
+.mo-dot.dana{background:#FFD600}
+.mo-dot.brandon{background:#00C853}
+.mo-dot.other{background:#ddd}
+
+/* LIST (shared weekly/monthly) */
+.list-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;align-items:flex-start}
+.list-row:last-child{border-bottom:none}
+.list-who{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;min-width:58px;padding-top:2px;flex-shrink:0}
+.list-body{flex:1}
+.list-title{font-size:13px;font-weight:500}
+.list-meta{font-size:11px;color:#aaa;margin-top:2px}
+
+/* ASSISTANT (chat) */
+.chat-wrap{display:flex;flex-direction:column;height:100%}
+.chat-messages{flex:1;overflow-y:auto;padding:16px 20px}
+.chat-bubble{margin-bottom:12px}
+.chat-bubble.user{text-align:right}
+.bubble-text{display:inline-block;padding:10px 14px;font-size:13px;line-height:1.6;max-width:85%;text-align:left}
+.bubble-text.user{background:#000;color:#fff}
+.bubble-text.ai{background:#f5f5f5;color:#000}
+.bubble-text.ai.loading{color:#aaa}
+.bubble-text.ai.done{border-left:2px solid #000}
+.chat-hint{font-size:11px;color:#bbb;padding:0 20px 10px;line-height:1.6}
+.chat-examples{padding:0 20px 12px;display:flex;flex-direction:column;gap:6px}
+.chat-ex{padding:9px 12px;border:1px solid #eee;background:#fff;font-family:'Inter',sans-serif;font-size:12px;color:#666;cursor:pointer;text-align:left}
+.chat-ex:active{background:#f8f8f8}
+.chat-input-wrap{border-top:1px solid #eee;padding:12px 20px;display:flex;gap:8px;align-items:flex-end;flex-shrink:0;background:#fff}
+.chat-input{flex:1;border:none;border-bottom:1px solid #ddd;padding:8px 0;font-family:'Inter',sans-serif;font-size:14px;outline:none;color:#000;background:transparent;resize:none;line-height:1.5;max-height:80px;overflow-y:auto}
+.chat-input:focus{border-color:#000}
+.chat-input::placeholder{color:#ccc}
+.chat-send{padding:8px 16px;border:1px solid #000;background:#000;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;cursor:pointer;flex-shrink:0;align-self:flex-end}
+.chat-send:disabled{background:#eee;border-color:#eee;color:#bbb;cursor:not-allowed}
+
+/* SETUP */
+.setup{padding:40px 24px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.setup h1{font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:8px}
+.setup p{font-size:14px;color:#666;line-height:1.65;margin-bottom:32px}
+.setup-field{margin-bottom:20px}
+.setup-lbl{display:block;font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:#aaa;margin-bottom:8px}
+.setup-inp{width:100%;border:none;border-bottom:1px solid #ddd;padding:8px 0;font-family:'Inter',sans-serif;font-size:16px;outline:none;color:#000;background:transparent}
+.setup-inp:focus{border-color:#000}
+.setup-inp::placeholder{color:#ccc}
+.setup-btn{width:100%;padding:14px;border:1px solid #000;background:#000;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;cursor:pointer;margin-top:12px}
+.setup-info{background:#f8f8f8;padding:16px;margin-top:28px;border-left:3px solid #FFD600}
+.setup-info-t{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+.setup-info-b{font-size:12px;color:#555;line-height:1.7}
+
+/* LOADING */
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:12px}
+.center-text{font-size:13px;color:#bbb;text-align:center;line-height:1.6}
+.err-btn{padding:10px 24px;border:1px solid #000;background:#000;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;cursor:pointer;margin-top:8px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeUp .2s ease forwards}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState, useEffect, useCallback, useRef} = React;
+
+// ── utils ───────────────────────────────────────────────
+function toStr(d) {
+  return d.getFullYear() + '-' +
+    String(d.getMonth()+1).padStart(2,'0') + '-' +
+    String(d.getDate()).padStart(2,'0');
+}
+function todayStr() { return toStr(new Date()); }
+function tomorrowStr() { const d = new Date(); d.setDate(d.getDate()+1); return toStr(d); }
+function addDays(s, n) { const d = new Date(s+'T12:00:00'); d.setDate(d.getDate()+n); return toStr(d); }
+function fmtDate(s) {
+  const KO = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const d = new Date(s+'T12:00:00');
+  return (d.getMonth()+1) + '/' + d.getDate() + '(' + KO[d.getDay()] + ')';
+}
+function fmtTime(t) {
+  if (!t) return 'All day';
+  const p = t.split(':').map(Number);
+  const h = p[0], m = p[1];
+  return (h%12||12) + ':' + String(m).padStart(2,'0') + (h>=12?' PM':' AM');
+}
+function toMin(t) { if (!t) return -1; const p = t.split(':').map(Number); return p[0]*60+p[1]; }
+function evtKey(e) { return (e.date||'') + '|' + (e.summary||e.title||'') + '|' + (e.startTime||''); }
+
+const WD  = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+const WDK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function weekDates(off) {
+  const d = new Date(); d.setDate(d.getDate() + off*7);
+  const dy = d.getDay(), df = dy===0 ? -6 : 1-dy;
+  d.setDate(d.getDate()+df);
+  return Array.from({length:7}, function(_,i){ const dd=new Date(d); dd.setDate(d.getDate()+i); return toStr(dd); });
+}
+
+// ── storage ─────────────────────────────────────────────
+const stor = {
+  get: function(k) { try { const v=localStorage.getItem(k); return v?JSON.parse(v):null; } catch(e){ return null; } },
+  set: function(k,v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+
+// ── GCal fetch ──────────────────────────────────────────
+async function fetchGCal(from, to) {
+  try {
+    const prompt = 'Use the Google Calendar tool to list ALL events from ALL calendars from ' + from + ' to ' + to + '. ' +
+      'After retrieving, output ONLY a JSON array (no explanation):\n' +
+      '[{"title":"event name","calendarName":"calendar name","date":"YYYY-MM-DD","startTime":"HH:MM or null","endTime":"HH:MM or null","location":"location or empty string","isAllDay":false}]\n' +
+      'If there are no events, return []. Do not include any text before or after the JSON array.';
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514', max_tokens:2000,
+        mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
+        messages:[{role:'user', content:prompt}]
+      })
+    });
+    const data = await resp.json();
+    // Collect text from all block types: text, mcp_tool_result
+    var allText = '';
+    (data.content||[]).forEach(function(block) {
+      if (block.type === 'text') {
+        allText += block.text;
+      } else if (block.type === 'mcp_tool_result') {
+        var inner = block.content || [];
+        inner.forEach(function(b) { if (b.type==='text') allText += b.text; });
+      }
+    });
+    if (!allText) return [];
+    var s = allText.indexOf('['), e = allText.lastIndexOf(']');
+    if (s < 0) return [];
+    return JSON.parse(allText.slice(s, e+1));
+  } catch(err) {
+    console.error('fetchGCal error:', err);
+    return [];
+  }
+}
+
+function tagEvents(raw, kidNames) {
+  return raw.map(function(e) {
+    var kidTag = null;
+    var title = (e.summary||e.title||'').toLowerCase();
+    var cal = (e.calendarName||'').toLowerCase();
+    kidNames.forEach(function(name) {
+      if (!name) return;
+      if (title.includes(name.toLowerCase()) || cal.includes(name.toLowerCase())) kidTag = name;
+    });
+    return Object.assign({}, e, {kidTag: kidTag});
+  });
+}
+
+// ── AI briefing ─────────────────────────────────────────
+async function runBriefing(events, targetDate, kidNames) {
+  if (!events.length) return {summary: fmtDate(targetDate) + ' 일정이 없어요.', alerts:[], actions:[]};
+  const evtLines = events.map(function(e) {
+    const who = e.kidTag ? '['+e.kidTag+'] ' : '';
+    const timeStr = e.startTime ? (e.startTime + '~' + (e.endTime||'?')) : 'All day';
+    const locStr = e.location ? ' @'+e.location : '';
+    return '• ' + who + '"' + (e.summary||e.title||'') + '" ' + timeStr + locStr;
+  });
+  const kidDesc = kidNames.filter(Boolean).join(', ') || 'Dana, Brandon';
+  const sys = 'You are a family schedule agent for a family with two kids (' + kidDesc + '). Detect: pickup conflicts (same time different places), dinner risk (events after 6pm), overloaded days, routing inefficiency. Output JSON only.';
+  const userMsg = fmtDate(targetDate) + ' 일정:\n' + evtLines.join('\n') +
+    '\n\n{"summary":"1문장 요약","alerts":[{"level":"red|amber|green|blue","title":"제목","detail":"설명"}],"actions":["액션1","액션2"]}';
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:900, system:sys, messages:[{role:'user',content:userMsg}]})
+    });
+    const data = await resp.json();
+    var allTxt = '';
+    (data.content||[]).forEach(function(block) {
+      if (block.type==='text') allTxt += block.text;
+      else if (block.type==='mcp_tool_result') { (block.content||[]).forEach(function(b){if(b.type==='text')allTxt+=b.text;}); }
+    });
+    const s = allTxt.indexOf('{'), e = allTxt.lastIndexOf('}');
+    if (s < 0) return {summary:allTxt||'분석 결과 없음', alerts:[], actions:[]};
+    return JSON.parse(allTxt.slice(s, e+1));
+  } catch(e) { return {summary:'Analyzing 오류가 발생했어요.', alerts:[], actions:[]}; }
+}
+
+// ── AI assistant (with GCal + Gmail MCP) ────────────────
+async function runAssistant(userText, conversationHistory, kidNames, calendarContext) {
+  const today = todayStr();
+  const kidDesc = kidNames.filter(Boolean).join(', ');
+  const ctxStr = calendarContext.slice(0,10).map(function(e){
+    return e.date + ' ' + e.title + (e.startTime?' '+e.startTime:'');
+  }).join(', ');
+
+  const sys = '당신은 ' + kidDesc + ' 두 아이를 키우는 가족의 개인 어시스턴트입니다. ' +
+    '오늘은 ' + today + '입니다. 현재 캘린더 미리보기: ' + ctxStr + '. ' +
+    'You can create, update, or delete Google Calendar events and send emails. ' +
+    'Reply concisely in English. If asked to draft a text message, wrap the message body with --- on its own lines. Confirm what you did clearly.';
+
+  const messages = conversationHistory.concat([{role:'user', content:userText}]);
+
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      model:'claude-sonnet-4-20250514', max_tokens:800, system:sys,
+      mcp_servers:[
+        {type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'},
+        {type:'url', url:'https://gmail.mcp.claude.com/mcp', name:'gmail'}
+      ],
+      messages: messages
+    })
+  });
+  const data = await resp.json();
+  var reply = '';
+  (data.content||[]).forEach(function(block) {
+    if (block.type==='text') reply += block.text;
+    else if (block.type==='mcp_tool_result') { (block.content||[]).forEach(function(b){if(b.type==='text')reply+=b.text;}); }
+  });
+  return reply.trim() || '처리 중 문제가 생겼어요.';
+}
+
+// ══════════════════════════════════════════
+// SETUP
+// ══════════════════════════════════════════
+function SetupScreen({onDone}) {
+  const [k1, setK1] = useState('Dana');
+  const [k2, setK2] = useState('Brandon');
+  const [phone, setPhone] = useState('');
+  return (
+    <div className="setup">
+      <h1>Lee Family HQ</h1>
+      <p>Reads from Google Calendar and surfaces schedule conflicts, tight pickups, and late evenings.</p>
+      <div className="setup-field">
+        <label className="setup-lbl">Child 1 Name</label>
+        <input className="setup-inp" value={k1} onChange={function(e){setK1(e.target.value);}} placeholder="Dana"/>
+      </div>
+      <div className="setup-field">
+        <label className="setup-lbl">Child 2 Name</label>
+        <input className="setup-inp" value={k2} onChange={function(e){setK2(e.target.value);}} placeholder="Brandon"/>
+      </div>
+      <div className="setup-field">
+        <label className="setup-lbl">Spouse Phone Number (문자 전송용)</label>
+        <input className="setup-inp" value={phone} onChange={function(e){setPhone(e.target.value);}} placeholder="+12125551234" type="tel"/>
+        <div style={{fontSize:11,color:'#bbb',marginTop:5}}>Enter number to open Messages app directly</div>
+      </div>
+      <button className="setup-btn" onClick={function(){ onDone(k1.trim()||'Dana', k2.trim()||'Brandon', phone.trim()); }}>
+        Get Started
+      </button>
+      <div className="setup-info">
+        <div className="setup-info-t">Share Google Calendar</div>
+        <div className="setup-info-b">
+          Share calendars with each other to see all events in one place.<br/>
+          구글 캘린더 → Settings → 특정 사용자와 공유 → 상대방 이메일 Add
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// BRIEFING SECTION
+// ══════════════════════════════════════════
+function BriefingSection({events, targetDate, kidNames}) {
+  const [state, setState] = useState('idle');
+  const [result, setResult] = useState(null);
+  const cacheKey = 'brief_' + targetDate;
+  const targetLabel = targetDate === tomorrowStr() ? 'Tomorrow' : targetDate === todayStr() ? 'Today' : '';
+
+  const load = useCallback(async function(force) {
+    if (state === 'loading') return;
+    if (!force) {
+      const cached = stor.get(cacheKey);
+      if (cached && cached.ts > Date.now()-3600000) { setResult(cached.data); setState('done'); return; }
+    }
+    setState('loading');
+    const r = await runBriefing(events, targetDate, kidNames);
+    setResult(r); stor.set(cacheKey, {data:r, ts:Date.now()}); setState('done');
+  }, [events.length, targetDate]);
+
+  useEffect(function(){ if (events.length > 0) load(false); }, [events.length, targetDate]);
+
+  return (
+    <div className="sec">
+      <div className="sec-label" style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:0}}>
+        <span>{'AI 브리핑 — ' + targetLabel + ' ' + fmtDate(targetDate)}</span>
+        {state==='done' && <button className="hdr-refresh" onClick={function(){load(true);}}>Refresh</button>}
+      </div>
+      {state==='loading' && (
+        <div style={{paddingTop:16, display:'flex', alignItems:'center', gap:8}}>
+          <div className="dots"><span/><span/><span/></div>
+          <span style={{fontSize:13,color:'#aaa'}}>일정 Analyzing...</span>
+        </div>
+      )}
+      {state==='done' && result && (
+        <div style={{paddingTop:14}}>
+          {result.summary && <div className="brief-summary">{result.summary}</div>}
+          {(!result.alerts || result.alerts.length===0) && <div className="no-issues">충돌이나 주의 사항이 없어요.</div>}
+          <div>
+            {(result.alerts||[]).map(function(a,i){
+              return (
+                <div key={i} className="alert-item">
+                  <div className={'a-dot '+a.level}/>
+                  <div>
+                    <div className="alert-title">{a.title}</div>
+                    <div className="alert-detail">{a.detail}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {result.actions && result.actions.length>0 && (
+            <div className="actions-wrap">
+              <div className="actions-lbl">오늘 밤 확인action items</div>
+              {result.actions.map(function(a,i){
+                return <div key={i} className="action-row"><div className="action-n">{i+1}</div><div className="action-t">{a}</div></div>;
+              })}
+            </div>
+          )}
+          <button className="retry-btn" onClick={function(){load(true);}}>Re-analyze</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// SCHEDULE SECTION (dropoff + pickup)
+// ══════════════════════════════════════════
+function AssignRow({label, field, ps, onSet}) {
+  return (
+    <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:5}}>
+      <span style={{fontSize:10,fontWeight:600,color:'#bbb',minWidth:52,textTransform:'uppercase',letterSpacing:'.4px'}}>{label}</span>
+      <button className={'pbtn'+(ps[field]==='Mom'?' taken':'')}
+        onClick={function(ev){ev.stopPropagation();onSet(field,'Mom');}}>Mom</button>
+      <button className={'pbtn'+(ps[field]==='Dad'?' taken':'')}
+        onClick={function(ev){ev.stopPropagation();onSet(field,'Dad');}}>Dad</button>
+      
+    </div>
+  );
+}
+
+function ScheduleSection({events, dateLabel}) {
+  const [pickup, setPickup] = useState(function(){ return stor.get('pickup_v5')||{}; });
+
+  function toggleOpen(key) {
+    var cur = pickup[key]||{};
+    var next = Object.assign({}, pickup);
+    if (!cur.open) { next[key] = {open:true, dropoff:null, pickup:null}; }
+    else { delete next[key]; }
+    setPickup(next); stor.set('pickup_v5', next);
+  }
+
+  function setField(key, field, who) {
+    var cur = pickup[key]||{open:true};
+    var next = Object.assign({}, pickup);
+    next[key] = Object.assign({}, cur, {open:true});
+    next[key][field] = (cur[field]===who) ? null : who;
+    setPickup(next); stor.set('pickup_v5', next);
+  }
+
+  if (!events || events.length===0) return (
+    <div className="sec">
+      <div className="sec-label">{dateLabel}</div>
+      <div style={{fontSize:13,color:'#ccc',paddingTop:4}}>No events</div>
+    </div>
+  );
+  const sorted = events.slice().sort(function(a,b){
+    if (a.isAllDay && !b.isAllDay) return -1;
+    if (!a.isAllDay && b.isAllDay) return 1;
+    return toMin(a.startTime)-toMin(b.startTime);
+  });
+  return (
+    <div className="sec">
+      <div className="sec-label" style={{display:'flex', justifyContent:'space-between'}}>
+        <span>{dateLabel+' ('+events.length+')'}</span>
+        <span style={{fontWeight:400,letterSpacing:0,textTransform:'none',fontSize:10,color:'#ccc'}}>Tap to assign drop-off & pickup</span>
+      </div>
+      {sorted.map(function(e,i){
+        const key = evtKey(e);
+        const ps = pickup[key]||{};
+        const isOpen = !!ps.open;
+        const kidClass = e.kidTag ? e.kidTag.toLowerCase() : '';
+        const parts = [];
+        if (ps.dropoff) parts.push('Drop: '+ps.dropoff[0]);
+        if (ps.pickup) parts.push('Pickup: '+ps.pickup[0]);
+        const summary = parts.join(' · ');
+        return (
+          <div key={i}>
+            <div className="evt" style={{cursor:'pointer'}} onClick={function(){toggleOpen(key);}}>
+              <div className="evt-time">{e.isAllDay?'All day':fmtTime(e.startTime)}</div>
+              <div className="evt-body">
+                <div className="evt-title">{e.summary||e.title}</div>
+                {(e.location||(e.endTime&&!e.isAllDay)) && (
+                  <div className="evt-sub">
+                    {!e.isAllDay&&e.endTime ? '~'+fmtTime(e.endTime) : ''}
+                    {!e.isAllDay&&e.endTime&&e.location ? ' · ' : ''}
+                    {e.location||''}
+                  </div>
+                )}
+                {!isOpen && summary && <div style={{fontSize:10,color:'#aaa',marginTop:3}}>{summary}</div>}
+                {e.kidTag && <span className={'evt-tag '+kidClass}>{e.kidTag}</span>}
+              </div>
+              <button className={'pickup-btn'+(isOpen?' on':'')}
+                onClick={function(ev){ev.stopPropagation();toggleOpen(key);}}>
+                {isOpen ? 'Close' : 'Assign'}
+              </button>
+            </div>
+            {isOpen && (
+              <div style={{padding:'10px 0 12px 66px',borderTop:'1px solid #f8f8f8'}}>
+                <AssignRow label="Drop-off" field="dropoff" ps={ps} onSet={function(f,w){setField(key,f,w);}}/>
+                <AssignRow label="Pickup" field="pickup" ps={ps} onSet={function(f,w){setField(key,f,w);}}/>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// QUICK ADD
+// ══════════════════════════════════════════
+async function createEventOnGCal(text, today) {
+  var prompt = 'Today is ' + today + ' (America/New_York). ' +
+    'The user wants to add this event to Google Calendar: "' + text + '". ' +
+    'Parse the date, time, title, location from the text. ' +
+    'Create the event on the primary calendar immediately. ' +
+    'If no year specified assume 2026. If no time specified make it all-day. ' +
+    'Respond in Korean confirming what you created (event name, date, time).';
+  var resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      model:'claude-sonnet-4-20250514', max_tokens:400,
+      mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
+      messages:[{role:'user', content:prompt}]
+    })
+  });
+  var data = await resp.json();
+  return (data.content||[]).filter(function(c){return c.type==='text';}).map(function(c){return c.text;}).join('') || 'Add 중 오류가 발생했어요.';
+}
+
+function QuickAdd({onAdded}) {
+  const [text, setText] = useState('');
+  const [state, setState] = useState('idle'); // idle|loading|done|error
+  const [result, setResult] = useState('');
+  const inputRef = useRef(null);
+
+  async function submit() {
+    var t = text.trim();
+    if (!t || state==='loading') return;
+    setState('loading');
+    try {
+      var res = await createEventOnGCal(t, todayStr());
+      setResult(res);
+      setState('done');
+      setText('');
+      if (onAdded) onAdded();
+      setTimeout(function(){ setState('idle'); setResult(''); }, 4000);
+    } catch(e) {
+      setResult('오류가 발생했어요. Try Again해주세요.');
+      setState('error');
+      setTimeout(function(){ setState('idle'); setResult(''); }, 3000);
+    }
+  }
+
+  return (
+    <div className="sec">
+      <div className="sec-label">Add Event</div>
+      <div style={{display:'flex',gap:8,alignItems:'flex-end'}}>
+        <textarea
+          ref={inputRef}
+          style={{flex:1,border:'none',borderBottom:'1px solid'+(state==='loading'?'#ccc':'#000'),padding:'7px 0',fontFamily:'Inter,sans-serif',fontSize:14,outline:'none',color:'#000',background:'transparent',resize:'none',lineHeight:1.5,minHeight:32,maxHeight:72,overflowY:'auto'}}
+          placeholder="Add Dana math class next Tuesday 4-5pm"
+          value={text}
+          rows={1}
+          onChange={function(e){setText(e.target.value);}}
+          onKeyDown={function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submit();}}}
+          disabled={state==='loading'}
+        />
+        <button
+          onClick={submit}
+          disabled={!text.trim()||state==='loading'}
+          style={{padding:'7px 16px',border:'1px solid #000',background:state==='loading'?'#eee':'#000',color:state==='loading'?'#aaa':'#fff',fontFamily:'Inter,sans-serif',fontWeight:600,fontSize:13,cursor:(!text.trim()||state==='loading')?'not-allowed':'pointer',flexShrink:0,marginBottom:0}}>
+          {state==='loading' ? <div className="dots" style={{display:'inline-flex'}}><span/><span/><span/></div> : 'Add'}
+        </button>
+      </div>
+      {state==='done' && (
+        <div style={{marginTop:10,fontSize:12,color:'#060',lineHeight:1.6,padding:'9px 12px',background:'#f0fff4',borderLeft:'2px solid #0a0'}}>
+          {result}
+        </div>
+      )}
+      {state==='error' && (
+        <div style={{marginTop:10,fontSize:12,color:'#c00',padding:'8px 12px',background:'#fff5f5',borderLeft:'2px solid #f00'}}>
+          {result}
+        </div>
+      )}
+      {state==='idle' && (
+        <div style={{marginTop:8,fontSize:11,color:'#ccc',lineHeight:1.6}}>
+          Saves to Google Calendar · Press Enter to submit
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// SMS BAR
+// ══════════════════════════════════════════
+function SmsBar({spousePhone}) {
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState('');
+
+  function openSms() {
+    var body = text.trim();
+    if (!body) return;
+    var href = spousePhone
+      ? 'sms:' + spousePhone + '?body=' + encodeURIComponent(body)
+      : 'sms:?body=' + encodeURIComponent(body);
+    window.location.href = href;
+  }
+
+  return (
+    <div className="sec" style={{borderTop:'1px solid #eee'}}>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',cursor:'pointer'}}
+        onClick={function(){setOpen(function(o){return !o;});}}>
+        <div className="sec-label" style={{marginBottom:0}}>Message Spouse</div>
+        <span style={{fontSize:11,color:'#bbb'}}>{open ? 'Close' : 'Open'}</span>
+      </div>
+      {open && (
+        <div style={{marginTop:12}}>
+          <div style={{display:'flex',gap:8,alignItems:'flex-end'}}>
+            <textarea
+              style={{flex:1,border:'none',borderBottom:'1px solid #000',padding:'6px 0',fontFamily:'Inter,sans-serif',fontSize:14,outline:'none',color:'#000',background:'transparent',resize:'none',lineHeight:1.5,minHeight:30,maxHeight:80,overflowY:'auto'}}
+              placeholder="Type a message..."
+              value={text}
+              rows={1}
+              autoFocus
+              onChange={function(e){setText(e.target.value);}}
+              onKeyDown={function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();openSms();}}}
+            />
+            <button
+              onClick={openSms}
+              disabled={!text.trim()}
+              style={{padding:'6px 16px',border:'1px solid #000',background:text.trim()?'#000':'#eee',color:text.trim()?'#fff':'#bbb',fontFamily:'Inter,sans-serif',fontWeight:600,fontSize:13,cursor:text.trim()?'pointer':'not-allowed',flexShrink:0}}>
+              Send
+            </button>
+          </div>
+          {!spousePhone && (
+            <div style={{fontSize:11,color:'#ccc',marginTop:6}}>Save spouse's number in Settings to auto-fill</div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+// ══════════════════════════════════════════
+// DINNER SECTION
+// ══════════════════════════════════════════
+function DinnerSection() {
+  const [dinner, setDinner] = useState(function(){ return stor.get('dinner_v1')||{cook:null,menu:'',time:''}; });
+
+  function setCook(who) {
+    var next = Object.assign({}, dinner, {cook: dinner.cook===who ? null : who});
+    setDinner(next); stor.set('dinner_v1', next);
+  }
+  function setMenu(val) {
+    var next = Object.assign({}, dinner, {menu: val});
+    setDinner(next); stor.set('dinner_v1', next);
+  }
+  function setTime(val) {
+    var next = Object.assign({}, dinner, {time: val});
+    setDinner(next); stor.set('dinner_v1', next);
+  }
+
+  return (
+    <div className="sec">
+      <div className="sec-label">Dinner</div>
+      <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:8}}>
+        <button className={'pbtn'+(dinner.cook==='Mom'?' taken':'')} onClick={function(){setCook('Mom');}}>Mom</button>
+        <button className={'pbtn'+(dinner.cook==='Dad'?' taken':'')} onClick={function(){setCook('Dad');}}>Dad</button>
+        <input
+          type="time"
+          value={dinner.time||''}
+          onChange={function(e){setTime(e.target.value);}}
+          style={{border:'none',borderBottom:'1px solid #ddd',padding:'5px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:dinner.time?'#000':'#aaa',background:'transparent',width:90}}
+        />
+        <input
+          value={dinner.menu}
+          onChange={function(e){setMenu(e.target.value);}}
+          placeholder="Menu..."
+          style={{flex:1,border:'none',borderBottom:'1px solid #ddd',padding:'5px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:'#000',background:'transparent'}}
+        />
+      </div>
+    </div>
+  );
+}
+
+
+// ══════════════════════════════════════════
+// TODAY TAB
+// ══════════════════════════════════════════
+function TodayTab({allEvents, kidNames, spousePhone}) {
+  const isEvening = new Date().getHours() >= 18;
+  const today = todayStr(), tomorrow = tomorrowStr();
+  const todayEvts = allEvents.filter(function(e){return e.date===today;});
+  const tomorrowEvts = allEvents.filter(function(e){return e.date===tomorrow;});
+  return (
+    <div className="fade">
+      <QuickAdd onAdded={function(){}}/>
+      <DinnerSection/>
+      <div>
+        <ScheduleSection events={todayEvts} dateLabel="Today"/>
+        {tomorrowEvts.length>0 && <ScheduleSection events={tomorrowEvts} dateLabel="Tomorrow"/>}
+      </div>
+      <SmsBar spousePhone={spousePhone}/>
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// WEEKLY TAB
+// ══════════════════════════════════════════
+function WeeklyTab({allEvents}) {
+  const [off, setOff] = useState(0);
+  const dates = weekDates(off);
+  const today = todayStr();
+  const evts = dates.reduce(function(acc,d){
+    return acc.concat(allEvents.filter(function(e){return e.date===d;}).sort(function(a,b){return toMin(a.startTime)-toMin(b.startTime);}));
+  }, []);
+  return (
+    <div className="fade" style={{padding:'18px 20px 16px'}}>
+      <div className="wk-nav">
+        <button className="wk-arrow" onClick={function(){setOff(function(o){return o-1;});}}>←</button>
+        <span className="wk-range">{dates[0].slice(5).replace('-','/') + ' – ' + dates[6].slice(5).replace('-','/')}</span>
+        <button className="wk-arrow" onClick={function(){setOff(function(o){return o+1;});}}>→</button>
+      </div>
+      <div className="wk-grid">
+        {dates.map(function(date) {
+          const de = allEvents.filter(function(e){return e.date===date;}).sort(function(a,b){return toMin(a.startTime)-toMin(b.startTime);});
+          const isT = date===today, dow = new Date(date+'T12:00:00').getDay();
+          return (
+            <div key={date} className="wk-col">
+              <div className="wk-hdr">
+                <div className="wk-dn" style={{color:dow===0?'#c00':undefined}}>{WD[dow]}</div>
+                {isT ? <div className="wk-today">{parseInt(date.split('-')[2])}</div>
+                      : <div className="wk-num" style={{color:dow===0?'#c00':undefined}}>{parseInt(date.split('-')[2])}</div>}
+              </div>
+              <div className="wk-body">
+                {de.map(function(e,j){
+                  const cls = e.kidTag ? 'wk-chip '+e.kidTag.toLowerCase() : 'wk-chip other';
+                  return <div key={j} className={cls}>{e.summary||e.title}</div>;
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {evts.length===0 ? (
+        <div style={{fontSize:13,color:'#ccc',paddingTop:8}}>No events this week</div>
+      ) : evts.map(function(e,i){
+        const kColor = e.kidTag==='Dana'?'#b89000':e.kidTag==='Brandon'?'#007a30':'#aaa';
+        return (
+          <div key={i} className="list-row">
+            <div className="list-who" style={{color:kColor}}>{e.kidTag||(e.label||'공통')}</div>
+            <div className="list-body">
+              <div className="list-title">{e.summary||e.title}</div>
+              <div className="list-meta">
+                {fmtDate(e.date)}
+                {e.startTime&&!e.isAllDay ? ' · '+fmtTime(e.startTime) : ''}
+                {e.location ? ' · '+e.location : ''}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// MONTHLY TAB
+// ══════════════════════════════════════════
+function MonthlyTab({allEvents}) {
+  const now = new Date();
+  const [yr, setYr] = useState(now.getFullYear());
+  const [mo, setMo] = useState(now.getMonth());
+  const today = todayStr();
+
+  function prevMo() {
+    if (mo===0) { setYr(function(y){return y-1;}); setMo(11); }
+    else setMo(function(m){return m-1;});
+  }
+  function nextMo() {
+    if (mo===11) { setYr(function(y){return y+1;}); setMo(0); }
+    else setMo(function(m){return m+1;});
+  }
+
+  const firstDow = new Date(yr, mo, 1).getDay();
+  const daysInMo = new Date(yr, mo+1, 0).getDate();
+  const prefix = String(yr) + '-' + String(mo+1).padStart(2,'0') + '-';
+  const moEvts = allEvents.filter(function(e){ return e.date && e.date.startsWith(prefix); })
+    .sort(function(a,b){ return a.date.localeCompare(b.date) || toMin(a.startTime)-toMin(b.startTime); });
+
+  const cells = [];
+  for (var i=0; i<firstDow; i++) cells.push(null);
+  for (var d=1; d<=daysInMo; d++) cells.push(d);
+
+  return (
+    <div className="fade" style={{padding:'18px 20px 16px'}}>
+      <div className="mo-nav">
+        <button className="mo-arrow" onClick={prevMo}>←</button>
+        <div className="mo-title">{yr + '년 ' + MONTHS[mo]}</div>
+        <button className="mo-arrow" onClick={nextMo}>→</button>
+      </div>
+      <div className="mo-grid">
+        {WDK.map(function(d,i){
+          return <div key={d} className="mo-dayname" style={{color:i===0?'#c00':undefined}}>{d}</div>;
+        })}
+        {cells.map(function(day,i){
+          if (!day) return <div key={'e'+i} className="mo-cell"/>;
+          const dateStr = prefix + String(day).padStart(2,'0');
+          const isT = dateStr===today;
+          const de = allEvents.filter(function(e){return e.date===dateStr;});
+          const dow = new Date(dateStr+'T12:00:00').getDay();
+          return (
+            <div key={dateStr} className="mo-cell">
+              <div className={'mo-num'+(isT?' today':'')} style={{color:!isT&&dow===0?'#c00':undefined}}>{day}</div>
+              {de.slice(0,3).map(function(e,j){
+                const cls = e.kidTag==='Dana'?'mo-dot dana':e.kidTag==='Brandon'?'mo-dot brandon':'mo-dot other';
+                return <div key={j} className={cls}/>;
+              })}
+              {de.length>3 && <div style={{fontSize:7,color:'#bbb',textAlign:'center'}}>+{de.length-3}</div>}
+            </div>
+          );
+        })}
+      </div>
+      {moEvts.length===0 ? (
+        <div style={{fontSize:13,color:'#ccc',paddingTop:8}}>이번 달 일정이 없어요</div>
+      ) : moEvts.map(function(e,i){
+        const kColor = e.kidTag==='Dana'?'#b89000':e.kidTag==='Brandon'?'#007a30':'#aaa';
+        return (
+          <div key={i} className="list-row">
+            <div className="list-who" style={{color:kColor}}>{e.kidTag||(e.label||'공통')}</div>
+            <div className="list-body">
+              <div className="list-title">{e.summary||e.title}</div>
+              <div className="list-meta">
+                {fmtDate(e.date)}
+                {e.startTime&&!e.isAllDay ? ' · '+fmtTime(e.startTime) : ''}
+                {e.location ? ' · '+e.location : ''}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// ASSISTANT TAB
+// ══════════════════════════════════════════
+const EXAMPLES = [
+  'Add JetBlue Miami trip May 21 to calendar',
+  'Summarize Dana\'s schedule this week',
+  'Draft a text about tomorrow\'s pickups',
+  'Add Brandon dentist next Tuesday 3pm',
+  'Draft a text about tomorrow\'s schedule',
+];
+
+function AssistantTab({allEvents, kidNames, spousePhone}) {
+  const [msgs, setMsgs] = useState([
+    {role:'ai', text:'무엇을 도와드릴까요? 캘린더 Add·수정, 일정 요약, 문자 작성 등을 말씀해주세요.'}
+  ]);
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [history, setHistory] = useState([]);
+  const bottomRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(function(){
+    if (bottomRef.current) bottomRef.current.scrollIntoView({behavior:'smooth'});
+  }, [msgs]);
+
+  async function send(text) {
+    const txt = (text || input).trim();
+    if (!txt || loading) return;
+    setInput('');
+    const userMsg = {role:'user', text:txt};
+    setMsgs(function(m){ return m.concat([userMsg, {role:'ai', text:'...', loading:true}]); });
+    setLoading(true);
+    const newHistory = history.concat([{role:'user', content:txt}]);
+    try {
+      const reply = await runAssistant(txt, history, kidNames, allEvents);
+      const aiMsg = {role:'ai', text:reply};
+      setMsgs(function(m){ return m.slice(0,-1).concat([aiMsg]); });
+      setHistory(newHistory.concat([{role:'assistant', content:reply}]));
+    } catch(e) {
+      setMsgs(function(m){ return m.slice(0,-1).concat([{role:'ai', text:'오류가 발생했어요. Try Again해주세요.'}]); });
+    }
+    setLoading(false);
+  }
+
+  const showExamples = msgs.length <= 1;
+
+  return (
+    <div style={{display:'flex', flexDirection:'column', height:'100%'}}>
+      <div style={{flex:1, overflowY:'auto', padding:'16px 20px'}}>
+        {msgs.map(function(m,i){
+          const smsDraft = m.role==='ai' && !m.loading && m.text && m.text.includes('---');
+          const smsBody = smsDraft ? m.text.replace(/^[\s\S]*?---\n?/,'').replace(/\n?---[\s\S]*$/,'').trim() : '';
+          const smsHref = spousePhone ? 'sms:'+spousePhone+'?body='+encodeURIComponent(smsBody) : 'sms:?body='+encodeURIComponent(smsBody);
+          return (
+            <div key={i} className={'chat-bubble '+(m.role==='user'?'user':'')}>
+              <div className={'bubble-text '+(m.role==='user'?'user':m.loading?'ai loading':'ai done')}>
+                {m.loading ? (
+                  <div className="dots"><span/><span/><span/></div>
+                ) : m.text.split('---').map(function(part, pi){
+                  if (pi % 2 === 1) {
+                    return (
+                      <div key={pi} style={{background:'#f0f0f0',border:'1px solid #ddd',padding:'10px 12px',margin:'8px 0',fontStyle:'normal',whiteSpace:'pre-wrap'}}>
+                        {part.trim()}
+                      </div>
+                    );
+                  }
+                  return <span key={pi}>{part}</span>;
+                })}
+              </div>
+              {smsDraft && (
+                <div style={{marginTop:6}}>
+                  <a href={smsHref} style={{display:'inline-block',padding:'7px 16px',border:'1px solid #000',background:'#000',color:'#fff',fontSize:12,fontWeight:600,fontFamily:'Inter,sans-serif',textDecoration:'none',letterSpacing:'.3px'}}>
+                    문자 Send
+                  </a>
+                  {!spousePhone && <span style={{fontSize:11,color:'#aaa',marginLeft:8}}>Save spouse's number in Settings to auto-fill</span>}
+                </div>
+              )}
+            </div>
+          );
+        })}
+        {showExamples && (
+          <div style={{marginTop:16}}>
+            <div style={{fontSize:10,fontWeight:600,letterSpacing:'.6px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>예시</div>
+            {EXAMPLES.map(function(ex,i){
+              return (
+                <button key={i} className="chat-ex" onClick={function(){send(ex);}}>
+                  {ex}
+                </button>
+              );
+            })}
+          </div>
+        )}
+        <div ref={bottomRef}/>
+      </div>
+      <div className="chat-input-wrap">
+        <textarea
+          ref={inputRef}
+          className="chat-input"
+          placeholder="캘린더 Add·수정, 문자 초안 작성..."
+          value={input}
+          rows={1}
+          onChange={function(e){setInput(e.target.value);}}
+          onKeyDown={function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}}
+        />
+        <button className="chat-send" onClick={function(){send();}} disabled={!input.trim()||loading}>
+          전송
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// EMBEDDED CALENDAR DATA (updated: 2026-03-17)
+// Refresh by asking Claude to update
+const GCAL_DATA = [{"summary": "Brandon Clarinet", "date": "2026-03-17", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School, Westwood MA", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Learn to Skate", "date": "2026-03-21", "startTime": "08:40", "endTime": "09:40", "location": "Babson Skating Center, Wellesley MA", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Mom CMITA 테니스 매치", "date": "2026-03-21", "startTime": "11:00", "endTime": "13:00", "location": "Dedham Health & Athletic Complex", "isAllDay": false, "kidTag": null, "label": "Other"}, {"summary": "Meet for Cultural Day", "date": "2026-03-21", "startTime": "13:30", "endTime": "14:30", "location": "Downey Elementary School", "isAllDay": false, "kidTag": null, "label": "School"}, {"summary": "Brandon Piano", "date": "2026-03-22", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-03-22", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Tennis", "date": "2026-03-22", "startTime": "15:00", "endTime": "16:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-03-24", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Downey Chorus Concert", "date": "2026-03-25", "startTime": "10:00", "endTime": "11:00", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Downey Multicultural Night", "date": "2026-03-27", "startTime": null, "endTime": null, "location": "", "isAllDay": true, "kidTag": null, "label": "School"}, {"summary": "Brandon Tennis (last day)", "date": "2026-03-28", "startTime": null, "endTime": null, "location": "", "isAllDay": true, "kidTag": "Brandon", "label": null}, {"summary": "Dana Skate Last Class", "date": "2026-03-28", "startTime": "08:40", "endTime": "09:40", "location": "Babson Skating Center, Wellesley MA", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Kavi Birthday", "date": "2026-03-28", "startTime": "11:00", "endTime": "12:00", "location": "", "isAllDay": false, "kidTag": null, "label": "Family"}, {"summary": "Brandon Tennis Match (last day)", "date": "2026-03-28", "startTime": "15:30", "endTime": "17:00", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Piano", "date": "2026-03-29", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-03-29", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-03-31", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Condition Swimming", "date": "2026-04-01", "startTime": "16:30", "endTime": "17:30", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Lunch with Fung Family (TBC)", "date": "2026-04-05", "startTime": "11:45", "endTime": "12:45", "location": "", "isAllDay": false, "kidTag": null, "label": "Family"}, {"summary": "Brandon Piano", "date": "2026-04-05", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-04-05", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-04-07", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Teacher Conference", "date": "2026-04-08", "startTime": "13:15", "endTime": "13:45", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Teacher Conference", "date": "2026-04-08", "startTime": "13:40", "endTime": "14:00", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Condition Swimming", "date": "2026-04-08", "startTime": "16:30", "endTime": "17:30", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Piano", "date": "2026-04-12", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-04-12", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-04-14", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Wyman Property Tax (Deadline 5/2)", "date": "2026-04-15", "startTime": null, "endTime": null, "location": "", "isAllDay": true, "kidTag": null, "label": "To-do"}, {"summary": "Dana Condition Swimming", "date": "2026-04-15", "startTime": "16:30", "endTime": "17:30", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Newport Rhode Races", "date": "2026-04-18", "startTime": "07:45", "endTime": "11:15", "location": "Newport, RI", "isAllDay": false, "kidTag": null, "label": "Personal"}, {"summary": "Brandon Piano", "date": "2026-04-19", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-04-19", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Dana Soccer Clinic", "date": "2026-04-20", "startTime": "09:00", "endTime": null, "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "JetBlue BOS to PHL (B6 #159, 6:00am)", "date": "2026-04-21", "startTime": "06:00", "endTime": "07:35", "location": "Boston Logan to Philadelphia", "isAllDay": false, "kidTag": null, "label": "Travel"}, {"summary": "Brandon Clarinet", "date": "2026-04-21", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Condition Swimming", "date": "2026-04-22", "startTime": "16:30", "endTime": "17:30", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "JetBlue PHL to BOS (B6 #860, 6:33pm)", "date": "2026-04-22", "startTime": "18:33", "endTime": "20:00", "location": "Philadelphia to Boston", "isAllDay": false, "kidTag": null, "label": "Travel"}, {"summary": "TARC Spring Classic 10K (Waitlist)", "date": "2026-04-25", "startTime": null, "endTime": null, "location": "Weston, MA", "isAllDay": true, "kidTag": null, "label": "Personal"}, {"summary": "Brandon Piano", "date": "2026-04-26", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-04-26", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Physical", "date": "2026-04-27", "startTime": "16:30", "endTime": "17:30", "location": "Atrius Health Chestnut Hill", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-04-28", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Condition Swimming", "date": "2026-04-29", "startTime": "16:30", "endTime": "17:30", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Piano", "date": "2026-05-03", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-05-03", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-05-05", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Piano", "date": "2026-05-10", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-05-10", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-05-12", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Piano", "date": "2026-05-17", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-05-17", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-05-19", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Science Bee (Orlando)", "date": "2026-05-21", "startTime": null, "endTime": null, "location": "Hyatt Regency Orlando", "isAllDay": true, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Piano", "date": "2026-05-24", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-05-24", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}, {"summary": "Brandon Clarinet", "date": "2026-05-26", "startTime": "17:00", "endTime": "17:30", "location": "Westwood High School", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Brandon Piano", "date": "2026-05-31", "startTime": "14:00", "endTime": "14:30", "location": "", "isAllDay": false, "kidTag": "Brandon", "label": null}, {"summary": "Dana Piano", "date": "2026-05-31", "startTime": "14:30", "endTime": "15:00", "location": "", "isAllDay": false, "kidTag": "Dana", "label": null}];
+
+
+// ══════════════════════════════════════════
+// SETTINGS TAB
+// ══════════════════════════════════════════
+function SettingsTab({setup, onSave}) {
+  const [k1, setK1] = useState(setup.k1||'');
+  const [k2, setK2] = useState(setup.k2||'');
+  const [phone, setPhone] = useState(setup.phone||'');
+  const [url, setUrl] = useState(setup.appsScriptUrl||'');
+  const [saved, setSaved] = useState(false);
+
+  function save() {
+    var s = {k1:k1.trim()||'Dana', k2:k2.trim()||'Brandon', phone:phone.trim(), appsScriptUrl:url.trim()};
+    stor.set('setup_v3', s);
+    onSave(s);
+    setSaved(true);
+    setTimeout(function(){ setSaved(false); }, 2000);
+  }
+
+  return (
+    <div style={{padding:'20px'}}>
+      <div className="sec-label" style={{marginBottom:20}}>Settings</div>
+
+      <div style={{marginBottom:20}}>
+        <label style={{display:'block',fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>Child 1 Name</label>
+        <input value={k1} onChange={function(e){setK1(e.target.value);}}
+          style={{width:'100%',border:'none',borderBottom:'1px solid #ddd',padding:'8px 0',fontFamily:'Inter,sans-serif',fontSize:16,outline:'none',color:'#000',background:'transparent'}}
+          placeholder="Dana"/>
+      </div>
+      <div style={{marginBottom:20}}>
+        <label style={{display:'block',fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>Child 2 Name</label>
+        <input value={k2} onChange={function(e){setK2(e.target.value);}}
+          style={{width:'100%',border:'none',borderBottom:'1px solid #ddd',padding:'8px 0',fontFamily:'Inter,sans-serif',fontSize:16,outline:'none',color:'#000',background:'transparent'}}
+          placeholder="Brandon"/>
+      </div>
+
+      <div style={{marginBottom:8}}>
+        <label style={{display:'block',fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>Spouse Phone Number</label>
+        <input value={phone} onChange={function(e){setPhone(e.target.value);}} type="tel"
+          style={{width:'100%',border:'none',borderBottom:'1px solid'+(phone?'#000':'#ddd'),padding:'8px 0',fontFamily:'Inter,sans-serif',fontSize:16,outline:'none',color:'#000',background:'transparent'}}
+          placeholder="+1 (617) 555-1234"/>
+        <div style={{fontSize:11,color:'#bbb',marginTop:6,lineHeight:1.6}}>
+          AI 탭에서 문자 초안 작성 후 "문자 Send" 버튼을 누르면<br/>
+          이 번호로 문자앱이 바로 열립니다.
+        </div>
+      </div>
+
+      {phone && (
+        <div style={{marginTop:12,padding:'10px 14px',background:'#f8f8f8',borderLeft:'2px solid #FFD600'}}>
+          <div style={{fontSize:11,fontWeight:600,color:'#888',marginBottom:4}}>문자 테스트</div>
+          <a href={'sms:'+phone+'?body='+encodeURIComponent('Lee Family HQ 테스트 메시지예요!')}
+            style={{fontSize:13,color:'#000',fontWeight:500}}>
+            {phone} 으로 테스트 문자 Send →
+          </a>
+          <div style={{fontSize:10,color:'#bbb',marginTop:4}}>홈화면에 Save한 앱에서 눌러야 작동해요</div>
+        </div>
+      )}
+
+      <div style={{marginTop:20,paddingTop:20,borderTop:'1px solid #f0f0f0'}}>
+        <div style={{fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>Google Apps Script URL</div>
+        <input value={url} onChange={function(e){setUrl(e.target.value);}}
+          style={{width:'100%',border:'none',borderBottom:'1px solid'+(url?'#000':'#ddd'),padding:'8px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:'#000',background:'transparent'}}
+          placeholder="https://script.google.com/macros/s/..."/>
+        <div style={{fontSize:11,color:url?'#060':'#bbb',marginTop:5,lineHeight:1.6}}>
+          {url ? 'Connected — live sync active' : 'Connect for live Google Calendar sync'}
+        </div>
+      </div>
+
+      <button onClick={save}
+        style={{marginTop:20,width:'100%',padding:'14px',border:'1px solid #000',background:saved?'#060':'#000',color:'#fff',fontFamily:'Inter,sans-serif',fontWeight:600,fontSize:14,cursor:'pointer'}}>
+        {saved ? 'Saved!' : 'Save'}
+      </button>
+
+      <div style={{marginTop:32,paddingTop:20,borderTop:'1px solid #f0f0f0'}}>
+        <div style={{fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:12}}>How to use messaging</div>
+        <div style={{fontSize:12,color:'#888',lineHeight:1.8}}>
+          1. Save spouse number above<br/>
+          2. Safari에서 이 앱을 열고 "홈 화면에 Add"<br/>
+          3. Launch from home screen icon<br/>
+          4. AI 탭 → 문자 초안 요청 → "문자 Send" 탭<br/>
+          5. Messages app opens with content filled in
+        </div>
+      </div>
+
+      <div style={{marginTop:24,paddingTop:20,borderTop:'1px solid #f0f0f0'}}>
+        <div style={{fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:12}}>Calendar Update</div>
+        <div style={{fontSize:12,color:'#888',lineHeight:1.7}}>
+          With Apps Script URL: live auto-sync<br/>
+          Without URL: uses embedded data<br/>
+          Claude에게 "Calendar Update해줘"로 수동 갱신 가능
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════
+// MAIN APP
+// ══════════════════════════════════════════
+function App() {
+  const [setup, setSetup] = useState(function(){ return stor.get('setup_v3'); });
+  const [tab, setTab] = useState('today');
+  const [loadState, setLoadState] = useState('idle');
+  const [allEvents, setAllEvents] = useState([]);
+  const kidNames = setup ? [setup.k1, setup.k2] : ['Dana','Brandon'];
+
+  const APPS_SCRIPT_URL = setup && setup.appsScriptUrl ? setup.appsScriptUrl : '';
+
+  const loadEvents = useCallback(async function() {
+    setLoadState('loading');
+    if (APPS_SCRIPT_URL) {
+      try {
+        var resp = await fetch(APPS_SCRIPT_URL);
+        var data = await resp.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setAllEvents(data);
+          setLoadState('done');
+          stor.set('cached_events', {data: data, ts: Date.now()});
+          return;
+        }
+      } catch(e) {
+        // fall through to cache or embedded
+      }
+    }
+    // Use cache if available
+    var cached = stor.get('cached_events');
+    if (cached && cached.data) {
+      setAllEvents(cached.data);
+    } else {
+      setAllEvents(GCAL_DATA);
+    }
+    setLoadState('done');
+  }, [APPS_SCRIPT_URL]);
+
+  useEffect(function(){ if (setup) loadEvents(); }, [setup]);
+
+  if (!setup) {
+    return (
+      <div className="page">
+        <SetupScreen onDone={function(k1,k2,ph){ const s={k1:k1,k2:k2,phone:ph}; stor.set('setup_v3',s); setSetup(s); }}/>
+      </div>
+    );
+  }
+
+  const today = todayStr();
+  const isEvening = new Date().getHours() >= 18;
+  const todayCnt = allEvents.filter(function(e){return e.date===today;}).length;
+  const NAVS = [
+    {id:'today', label:'Today'+(todayCnt>0?' ('+todayCnt+')':'')},
+    {id:'weekly', label:'Weekly'},
+    {id:'monthly', label:'Monthly'},
+    {id:'settings', label:'Settings'},
+  ];
+
+  const isReady = true;
+
+  return (
+    <div className="page" style={{height:'100vh'}}>
+      {/* HEADER */}
+      <div className="hdr">
+        <div className="hdr-row">
+          <div className="hdr-title">Lee Family HQ</div>
+          <div className="hdr-date">{fmtDate(today)}</div>
+        </div>
+        <div className="hdr-kids">{kidNames.filter(Boolean).join(' · ')}</div>
+        <div className="hdr-meta">
+          <span className="hdr-mode">{isEvening?'Evening':'Morning'}{setup&&setup.appsScriptUrl?' · 실시간':' · 내장 데이터'}</span>
+          <button className="hdr-refresh" onClick={loadEvents} disabled={loadState==='loading'}>
+            {loadState==='loading'?<span style={{display:'inline-flex',alignItems:'center',gap:4}}><div className="dots"><span/><span/><span/></div></span>:'Refresh'}
+          </button>
+        </div>
+      </div>
+
+      {/* BODY */}
+      <div className="body">
+        {!isReady && loadState!=='error' && (
+          <div className="center">
+            <div className="dots"><span/><span/><span/></div>
+            <div className="center-text">구글 캘린더 Loading...<br/><span style={{fontSize:11,color:'#ccc',marginTop:4,display:'block'}}>처음 로드는 10~20초 걸릴 수 있어요</span></div>
+          </div>
+        )}
+        {loadState==='error' && (
+          <div className="center">
+            <div className="center-text">Couldn't load calendar.<br/>Check your Google Calendar connection.</div>
+            <button className="err-btn" onClick={loadEvents}>Try Again</button>
+          </div>
+        )}
+        {isReady && tab==='today' && <TodayTab allEvents={allEvents} kidNames={kidNames} spousePhone={setup?setup.phone:''}/>}
+        {isReady && tab==='weekly' && <WeeklyTab allEvents={allEvents}/>}
+        {isReady && tab==='monthly' && <MonthlyTab allEvents={allEvents}/>}
+        {tab==='settings' && <SettingsTab setup={setup} onSave={function(s){setSetup(s);}}/>}
+      </div>
+
+      {/* NAV */}
+      <nav className="nav">
+        {NAVS.map(function(n){
+          return (
+            <button key={n.id} className={'nav-btn'+(tab===n.id?' act':'')} onClick={function(){setTab(n.id);}}>
+              {n.label}
+            </button>
+          );
+        })}
+      </nav>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+</script>
+</body>
+</html>
