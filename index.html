@@ -212,6 +212,18 @@ const stor = {
   set: function(k,v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
 };
 
+// ── API helper ──────────────────────────────────────────
+function getApiHeaders() {
+  var setup = stor.get('setup_v3');
+  var key = (setup && setup.anthropicApiKey) || '';
+  return {
+    'Content-Type': 'application/json',
+    'anthropic-version': '2025-01-01',
+    'x-api-key': key,
+    'anthropic-dangerous-direct-browser-access': 'true'
+  };
+}
+
 // ── GCal fetch ──────────────────────────────────────────
 async function fetchGCal(from, to) {
   try {
@@ -220,7 +232,7 @@ async function fetchGCal(from, to) {
       '[{"title":"event name","calendarName":"calendar name","date":"YYYY-MM-DD","startTime":"HH:MM or null","endTime":"HH:MM or null","location":"location or empty string","isAllDay":false}]\n' +
       'If there are no events, return []. Do not include any text before or after the JSON array.';
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST', headers:{'Content-Type':'application/json'},
+      method:'POST', headers:getApiHeaders(),
       body: JSON.stringify({
         model:'claude-sonnet-4-20250514', max_tokens:2000,
         mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
@@ -276,7 +288,7 @@ async function runBriefing(events, targetDate, kidNames) {
     '\n\n{"summary":"1문장 요약","alerts":[{"level":"red|amber|green|blue","title":"제목","detail":"설명"}],"actions":["액션1","액션2"]}';
   try {
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST', headers:{'Content-Type':'application/json'},
+      method:'POST', headers:getApiHeaders(),
       body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:900, system:sys, messages:[{role:'user',content:userMsg}]})
     });
     const data = await resp.json();
@@ -307,7 +319,7 @@ async function runAssistant(userText, conversationHistory, kidNames, calendarCon
   const messages = conversationHistory.concat([{role:'user', content:userText}]);
 
   const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method:'POST', headers:{'Content-Type':'application/json'},
+    method:'POST', headers:getApiHeaders(),
     body: JSON.stringify({
       model:'claude-sonnet-4-20250514', max_tokens:800, system:sys,
       mcp_servers:[
@@ -536,7 +548,7 @@ async function createEventOnGCal(text, today) {
     'If no year specified assume 2026. If no time specified make it all-day. ' +
     'Respond in Korean confirming what you created (event name, date, time).';
   var resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method:'POST', headers:{'Content-Type':'application/json'},
+    method:'POST', headers:getApiHeaders(),
     body: JSON.stringify({
       model:'claude-sonnet-4-20250514', max_tokens:400,
       mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
@@ -709,14 +721,14 @@ function DinnerSection() {
 // ══════════════════════════════════════════
 // TODAY TAB
 // ══════════════════════════════════════════
-function TodayTab({allEvents, kidNames, spousePhone}) {
+function TodayTab({allEvents, kidNames, spousePhone, onRefresh}) {
   const isEvening = new Date().getHours() >= 18;
   const today = todayStr(), tomorrow = tomorrowStr();
   const todayEvts = allEvents.filter(function(e){return e.date===today;});
   const tomorrowEvts = allEvents.filter(function(e){return e.date===tomorrow;});
   return (
     <div className="fade">
-      <QuickAdd onAdded={function(){}}/>
+      <QuickAdd onAdded={onRefresh}/>
       <DinnerSection/>
       <div>
         <ScheduleSection events={todayEvts} dateLabel="Today"/>
@@ -992,10 +1004,11 @@ function SettingsTab({setup, onSave}) {
   const [k2, setK2] = useState(setup.k2||'');
   const [phone, setPhone] = useState(setup.phone||'');
   const [url, setUrl] = useState(setup.appsScriptUrl||'');
+  const [apiKey, setApiKey] = useState(setup.anthropicApiKey||'');
   const [saved, setSaved] = useState(false);
 
   function save() {
-    var s = {k1:k1.trim()||'Dana', k2:k2.trim()||'Brandon', phone:phone.trim(), appsScriptUrl:url.trim()};
+    var s = {k1:k1.trim()||'Dana', k2:k2.trim()||'Brandon', phone:phone.trim(), appsScriptUrl:url.trim(), anthropicApiKey:apiKey.trim()};
     stor.set('setup_v3', s);
     onSave(s);
     setSaved(true);
@@ -1048,6 +1061,16 @@ function SettingsTab({setup, onSave}) {
           placeholder="https://script.google.com/macros/s/..."/>
         <div style={{fontSize:11,color:url?'#060':'#bbb',marginTop:5,lineHeight:1.6}}>
           {url ? 'Connected — live sync active' : 'Connect for live Google Calendar sync'}
+        </div>
+      </div>
+
+      <div style={{marginTop:20,paddingTop:20,borderTop:'1px solid #f0f0f0'}}>
+        <div style={{fontSize:10,fontWeight:600,letterSpacing:'.7px',textTransform:'uppercase',color:'#bbb',marginBottom:8}}>Anthropic API Key</div>
+        <input value={apiKey} onChange={function(e){setApiKey(e.target.value);}} type="password"
+          style={{width:'100%',border:'none',borderBottom:'1px solid'+(apiKey?'#000':'#ddd'),padding:'8px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:'#000',background:'transparent'}}
+          placeholder="sk-ant-..."/>
+        <div style={{fontSize:11,color:apiKey?'#060':'#bbb',marginTop:5,lineHeight:1.6}}>
+          {apiKey ? 'API key set — AI features active' : 'Required for Add Event, AI Assistant, and Briefing'}
         </div>
       </div>
 
@@ -1170,7 +1193,7 @@ function App() {
             <button className="err-btn" onClick={loadEvents}>Try Again</button>
           </div>
         )}
-        {isReady && tab==='today' && <TodayTab allEvents={allEvents} kidNames={kidNames} spousePhone={setup?setup.phone:''}/>}
+        {isReady && tab==='today' && <TodayTab allEvents={allEvents} kidNames={kidNames} spousePhone={setup?setup.phone:''} onRefresh={loadEvents}/>}
         {isReady && tab==='weekly' && <WeeklyTab allEvents={allEvents}/>}
         {isReady && tab==='monthly' && <MonthlyTab allEvents={allEvents}/>}
         {tab==='settings' && <SettingsTab setup={setup} onSave={function(s){setSetup(s);}}/>}
