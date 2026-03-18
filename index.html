@@ -219,6 +219,7 @@ function getApiHeaders() {
   return {
     'Content-Type': 'application/json',
     'anthropic-version': '2025-01-01',
+    'anthropic-beta': 'mcp-client-2025-04-04',
     'x-api-key': key,
     'anthropic-dangerous-direct-browser-access': 'true'
   };
@@ -1118,7 +1119,7 @@ function App() {
     setLoadState('loading');
     if (APPS_SCRIPT_URL) {
       try {
-        var resp = await fetch(APPS_SCRIPT_URL);
+        var resp = await fetch(APPS_SCRIPT_URL, {redirect:'follow'});
         var data = await resp.json();
         if (Array.isArray(data) && data.length > 0) {
           setAllEvents(data);
