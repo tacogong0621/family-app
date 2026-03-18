@@ -542,22 +542,41 @@ function ScheduleSection({events, dateLabel}) {
 // QUICK ADD
 // ══════════════════════════════════════════
 async function createEventOnGCal(text, today) {
+  // Step 1: Use Claude to parse natural language into structured event data
   var prompt = 'Today is ' + today + ' (America/New_York). ' +
-    'The user wants to add this event to Google Calendar: "' + text + '". ' +
-    'Parse the date, time, title, location from the text. ' +
-    'Create the event on the primary calendar immediately. ' +
-    'If no year specified assume 2026. If no time specified make it all-day. ' +
-    'Respond in Korean confirming what you created (event name, date, time).';
+    'Parse this into a Google Calendar event: "' + text + '". ' +
+    'If no year specified assume 2026. ' +
+    'Return ONLY valid JSON (no markdown, no explanation):\n' +
+    '{"title":"event title","date":"YYYY-MM-DD","startTime":"HH:MM","endTime":"HH:MM","location":"","isAllDay":false}\n' +
+    'If no time, set isAllDay:true and omit startTime/endTime.';
   var resp = await fetch('https://api.anthropic.com/v1/messages', {
     method:'POST', headers:getApiHeaders(),
     body: JSON.stringify({
-      model:'claude-sonnet-4-20250514', max_tokens:400,
-      mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
+      model:'claude-sonnet-4-20250514', max_tokens:300,
       messages:[{role:'user', content:prompt}]
     })
   });
   var data = await resp.json();
-  return (data.content||[]).filter(function(c){return c.type==='text';}).map(function(c){return c.text;}).join('') || 'Add 중 오류가 발생했어요.';
+  var txt = (data.content||[]).filter(function(c){return c.type==='text';}).map(function(c){return c.text;}).join('');
+  if (!txt) throw new Error('AI parse failed');
+  var s = txt.indexOf('{'), e = txt.lastIndexOf('}');
+  if (s < 0) throw new Error('No JSON in response');
+  var evt = JSON.parse(txt.slice(s, e+1));
+
+  // Step 2: Send to Google Apps Script to create the event
+  var setup = stor.get('setup_v3');
+  var scriptUrl = setup && setup.appsScriptUrl;
+  if (!scriptUrl) throw new Error('Apps Script URL not set');
+  var createResp = await fetch(scriptUrl, {
+    method:'POST', redirect:'follow',
+    headers:{'Content-Type':'text/plain'},
+    body: JSON.stringify({action:'create', event:evt})
+  });
+  var result = await createResp.json();
+  if (result && result.error) throw new Error(result.error);
+  var msg = '✅ ' + evt.title + ' — ' + evt.date;
+  if (!evt.isAllDay && evt.startTime) msg += ' ' + evt.startTime + (evt.endTime ? '~'+evt.endTime : '');
+  return msg;
 }
 
 function QuickAdd({onAdded}) {
