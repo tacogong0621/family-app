@@ -219,7 +219,6 @@ function getApiHeaders() {
   return {
     'Content-Type': 'application/json',
     'anthropic-version': '2025-01-01',
-    'anthropic-beta': 'mcp-client-2025-04-04',
     'x-api-key': key,
     'anthropic-dangerous-direct-browser-access': 'true'
   };
@@ -228,33 +227,15 @@ function getApiHeaders() {
 // ── GCal fetch ──────────────────────────────────────────
 async function fetchGCal(from, to) {
   try {
-    const prompt = 'Use the Google Calendar tool to list ALL events from ALL calendars from ' + from + ' to ' + to + '. ' +
-      'After retrieving, output ONLY a JSON array (no explanation):\n' +
-      '[{"title":"event name","calendarName":"calendar name","date":"YYYY-MM-DD","startTime":"HH:MM or null","endTime":"HH:MM or null","location":"location or empty string","isAllDay":false}]\n' +
-      'If there are no events, return []. Do not include any text before or after the JSON array.';
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST', headers:getApiHeaders(),
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514', max_tokens:2000,
-        mcp_servers:[{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
-        messages:[{role:'user', content:prompt}]
-      })
+    var setup = stor.get('setup_v3');
+    var scriptUrl = setup && setup.appsScriptUrl;
+    if (!scriptUrl) { console.error('Apps Script URL not set'); return []; }
+    var resp = await fetch(scriptUrl, {redirect:'follow'});
+    var events = await resp.json();
+    // Filter to requested date range
+    return events.filter(function(e) {
+      return e.date >= from && e.date <= to;
     });
-    const data = await resp.json();
-    // Collect text from all block types: text, mcp_tool_result
-    var allText = '';
-    (data.content||[]).forEach(function(block) {
-      if (block.type === 'text') {
-        allText += block.text;
-      } else if (block.type === 'mcp_tool_result') {
-        var inner = block.content || [];
-        inner.forEach(function(b) { if (b.type==='text') allText += b.text; });
-      }
-    });
-    if (!allText) return [];
-    var s = allText.indexOf('['), e = allText.lastIndexOf(']');
-    if (s < 0) return [];
-    return JSON.parse(allText.slice(s, e+1));
   } catch(err) {
     console.error('fetchGCal error:', err);
     return [];
