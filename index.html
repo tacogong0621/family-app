@@ -23,17 +23,17 @@ body{font-family:'Inter',sans-serif;color:#000;max-width:430px;margin:0 auto;-we
 .page{min-height:100vh;display:flex;flex-direction:column}
 
 /* HEADER */
-.hdr{padding:max(env(safe-area-inset-top),18px) 20px 14px;border-bottom:1px solid #000;flex-shrink:0}
+.hdr{padding:max(env(safe-area-inset-top),10px) 20px 8px;border-bottom:1px solid #000;flex-shrink:0}
 .hdr-row{display:flex;justify-content:space-between;align-items:baseline}
 .hdr-title{font-size:15px;font-weight:700}
 .hdr-date{font-size:12px;color:#999}
 .hdr-kids{font-size:11px;color:#bbb;margin-top:4px;letter-spacing:.3px;text-transform:uppercase}
-.hdr-meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.hdr-meta{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
 .hdr-mode{font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border:1px solid #000}
 .hdr-refresh{font-size:11px;color:#bbb;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:underline;text-underline-offset:2px;padding:0}
 
 /* NAV */
-.nav{border-top:1px solid #000;display:flex;height:56px;flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
+.nav{border-top:1px solid #000;display:flex;height:44px;flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
 .nav-btn{flex:1;border:none;background:none;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#bbb;cursor:pointer;letter-spacing:.3px;text-transform:uppercase}
 .nav-btn.act{color:#000;font-weight:700}
 
@@ -41,9 +41,9 @@ body{font-family:'Inter',sans-serif;color:#000;max-width:430px;margin:0 auto;-we
 .body{flex:1;overflow-y:auto}
 
 /* SECTION */
-.sec{border-bottom:1px solid #f0f0f0;padding:18px 20px}
+.sec{border-bottom:1px solid #f0f0f0;padding:10px 20px}
 .sec:last-child{border-bottom:none}
-.sec-label{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:#bbb;margin-bottom:14px}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:#bbb;margin-bottom:8px}
 
 /* DOTS */
 .dots{display:inline-flex;gap:4px;align-items:center}
@@ -53,8 +53,8 @@ body{font-family:'Inter',sans-serif;color:#000;max-width:430px;margin:0 auto;-we
 @keyframes dp{0%,80%,100%{opacity:.3;transform:scale(.7)}40%{opacity:1;transform:scale(1)}}
 
 /* BRIEFING */
-.brief-summary{font-size:14px;font-weight:500;line-height:1.65;margin-bottom:16px}
-.alert-item{display:flex;gap:12px;padding:11px 0;border-top:1px solid #f5f5f5;align-items:flex-start}
+.brief-summary{font-size:13px;font-weight:500;line-height:1.5;margin-bottom:10px}
+.alert-item{display:flex;gap:10px;padding:7px 0;border-top:1px solid #f5f5f5;align-items:flex-start}
 .alert-item:first-child{border-top:none;padding-top:0}
 .a-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
 .a-dot.red{background:#c00}.a-dot.amber{background:#c07000}.a-dot.green{background:#060}.a-dot.blue{background:#004ccc}
@@ -69,7 +69,7 @@ body{font-family:'Inter',sans-serif;color:#000;max-width:430px;margin:0 auto;-we
 .retry-btn{background:none;border:none;font-family:'Inter',sans-serif;font-size:12px;color:#bbb;cursor:pointer;text-decoration:underline;text-underline-offset:2px;padding:0;margin-top:12px;display:block}
 
 /* EVENTS */
-.evt{display:flex;gap:14px;padding:10px 0;border-top:1px solid #f5f5f5;align-items:flex-start;cursor:pointer}
+.evt{display:flex;gap:14px;padding:6px 0;border-top:1px solid #f5f5f5;align-items:flex-start;cursor:pointer}
 .evt:first-child{border-top:none;padding-top:0}
 .evt-time{font-size:11px;color:#aaa;min-width:52px;padding-top:2px;font-weight:500;flex-shrink:0}
 .evt-body{flex:1;min-width:0}
@@ -450,9 +450,9 @@ function AssignRow({label, field, ps, onSet}) {
     <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:5}}>
       <span style={{fontSize:10,fontWeight:600,color:'#bbb',minWidth:52,textTransform:'uppercase',letterSpacing:'.4px'}}>{label}</span>
       <button className={'pbtn'+(ps[field]==='Mom'?' taken':'')}
-        onClick={function(ev){ev.stopPropagation();onSet(field,'Mom');}}>Mom</button>
+        onClick={function(ev){ev.stopPropagation();onSet(field,'Mom');}}>👩 Mom</button>
       <button className={'pbtn'+(ps[field]==='Dad'?' taken':'')}
-        onClick={function(ev){ev.stopPropagation();onSet(field,'Dad');}}>Dad</button>
+        onClick={function(ev){ev.stopPropagation();onSet(field,'Dad');}}>👨 Dad</button>
       
     </div>
   );
@@ -697,20 +697,20 @@ function DinnerSection() {
   return (
     <div className="sec">
       <div className="sec-label">Dinner</div>
-      <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:8}}>
-        <button className={'pbtn'+(dinner.cook==='Mom'?' taken':'')} onClick={function(){setCook('Mom');}}>Mom</button>
-        <button className={'pbtn'+(dinner.cook==='Dad'?' taken':'')} onClick={function(){setCook('Dad');}}>Dad</button>
-        <input
-          type="time"
-          value={dinner.time||''}
-          onChange={function(e){setTime(e.target.value);}}
-          style={{border:'none',borderBottom:'1px solid #ddd',padding:'5px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:dinner.time?'#000':'#aaa',background:'transparent',width:90}}
-        />
+      <div style={{display:'flex',gap:6,alignItems:'center',marginBottom:6,flexWrap:'wrap'}}>
+        <button className={'pbtn'+(dinner.cook==='Mom'?' taken':'')} onClick={function(){setCook('Mom');}}>👩 Mom</button>
+        <button className={'pbtn'+(dinner.cook==='Dad'?' taken':'')} onClick={function(){setCook('Dad');}}>👨 Dad</button>
+        <span style={{color:'#ddd',fontSize:11}}>|</span>
+        {['5:30','6:00','6:30','7:00'].map(function(t){
+          return <button key={t} className={'pbtn'+(dinner.time===t?' taken':'')}
+            onClick={function(){setTime(dinner.time===t?'':t);}}
+            style={{padding:'4px 8px',fontSize:11,minWidth:0}}>{t}</button>;
+        })}
         <input
           value={dinner.menu}
           onChange={function(e){setMenu(e.target.value);}}
           placeholder="Menu..."
-          style={{flex:1,border:'none',borderBottom:'1px solid #ddd',padding:'5px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:'#000',background:'transparent'}}
+          style={{flex:1,minWidth:100,border:'none',borderBottom:'1px solid #ddd',padding:'4px 0',fontFamily:'Inter,sans-serif',fontSize:13,outline:'none',color:'#000',background:'transparent'}}
         />
       </div>
     </div>
